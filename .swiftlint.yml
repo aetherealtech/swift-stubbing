@@ -1,0 +1,7 @@
+disabled_rules:
+  - line_length
+  - nesting
+trailing_comma:
+  mandatory_comma: true
+switch_case_alignment:
+  indented_cases: true
