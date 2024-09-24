@@ -1,4 +1,4 @@
-// swift-tools-version: 5.10
+// swift-tools-version: 6.0
 
 import CompilerPluginSupport
 import PackageDescription
@@ -21,8 +21,7 @@ let package = Package(
             name: "Stubbing",
             dependencies: [
                 "StubbingMacros",
-            ],
-            swiftSettings: [.concurrencyChecking]
+            ]
         ),
         .macro(
             name: "StubbingMacros",
@@ -30,42 +29,21 @@ let package = Package(
                 .product(name: "SwiftSyntax", package: "swift-syntax"),
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
-            ],
-            swiftSettings: [.concurrencyChecking]
+            ]
         ),
         .testTarget(
             name: "StubbingTests",
             dependencies: [
                 "Stubbing",
                 .product(name: "Assertions", package: "swift-assertions"),
-            ],
-            swiftSettings: [.concurrencyChecking]
+            ]
         ),
         .testTarget(
             name: "StubbingMacrosTests",
             dependencies: [
                 "StubbingMacros",
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
-            ],
-            swiftSettings: [.concurrencyChecking]
+            ]
         ),
     ]
 )
-
-extension SwiftSetting {
-    enum ConcurrencyChecking: String {
-        case complete
-        case minimal
-        case targeted
-    }
-
-    static var concurrencyChecking: Self {
-        .concurrencyChecking(.complete)
-    }
-
-    static func concurrencyChecking(_ setting: ConcurrencyChecking = .complete) -> Self {
-        .unsafeFlags(
-            ["-Xfrontend", "-strict-concurrency=\(setting)"]
-        )
-    }
-}
