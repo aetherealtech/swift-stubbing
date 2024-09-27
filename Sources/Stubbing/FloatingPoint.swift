@@ -10,4 +10,6 @@ extension Double: Stubbable {}
 extension Float16: Stubbable {}
 #endif
 
+#if !arch(arm64)
 extension Float80: Stubbable {}
+#endif
