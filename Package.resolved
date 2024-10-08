@@ -1,13 +1,13 @@
 {
-  "originHash" : "07b26e57c9367f5872118e9118c832e233d99fcc65e116244004906e0f274bac",
+  "originHash" : "41a4e2be2ba695e99a0cae4a1f2d3f763bcf1bc34a2a5f8a59a41f003723136e",
   "pins" : [
     {
       "identity" : "swift-assertions",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/aetherealtech/swift-assertions",
       "state" : {
-        "branch" : "master",
-        "revision" : "dcb111cfb3b270e8f28733b5287892dc309a8f37"
+        "revision" : "e66945f6db5372a5c615e974c534c0d89b76171c",
+        "version" : "0.1.0"
       }
     },
     {
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/pointfreeco/xctest-dynamic-overlay",
       "state" : {
-        "revision" : "96beb108a57f24c8476ae1f309239270772b2940",
-        "version" : "1.2.5"
+        "revision" : "770f990d3e4eececb57ac04a6076e22f8c97daeb",
+        "version" : "1.4.2"
       }
     }
   ],

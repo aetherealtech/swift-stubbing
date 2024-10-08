@@ -14,7 +14,7 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/apple/swift-syntax", from: .init(510, 0, 3)),
-        .package(url: "https://github.com/aetherealtech/swift-assertions", branch: "master"),
+        .package(url: "https://github.com/aetherealtech/swift-assertions", from: .init(0, 1, 0)),
     ],
     targets: [
         .target(
